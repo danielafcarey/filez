@@ -1,0 +1,79 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+:imap jj <Esc>
+set clipboard=unnamed
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" ignore search case
+nnoremap / /\c
+nnoremap ? ?\c
+
+set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+" save and go back into normal mode
+imap jwj <Esc>:w<ENTER>
+
+" SET AUTOSAVE ON FOCUSLOST
+:au FocusLost * silent! wa
+
+" doesn't show 'visual' or 'normal' or 'insert'
+set noshowmode
+
+set nu
+
+" TOGGLE NUMBERS VIEW
+function! NumberToggle()
+  :exec &nu==0? "se nu!" : "se rnu!"
+endfunction
+nnoremap <C-n> :call NumberToggle()<CR>
+
+set mouse=n
+
+" SOLARIZED COLORSCHEME
+syntax enable
+set background=dark
+colorscheme solarized
+
+map <C-b> :NERDTreeToggle<CR>ll NetrwToggle()<CR>
+
+" map split navigation from <c-w-direction> to <c-direction>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" split resizing
+nmap <Right> <C-w>>
+nmap <Left> <C-w><
+nmap <Up> <C-w>+
+nmap <Down> <C-w>-
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+
+" configure vim to save the swapfiles to a separate location
+
+set backupdir=$TMPDIR//
+set directory=$TMPDIR//
