@@ -1,3 +1,4 @@
+export PATH="$HOME/.npm-packages/bin:$PATH"
 
 export NVM_DIR="/Users/daniela/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -13,15 +14,18 @@ alias gcam="git commit -m"
 alias gmm="git merge master"
 alias gpom="git pull origin master"
 alias gs="git status"
-alias tur='open -a "Google Chrome" http://frontend.turing.io/lessons/'
-alias m3="cd ~/turing/mod3"
-alias m2="cd ~/turing/mod2"
-alias m1="cd ~/turing/mod1"
 alias oi="open index.html"
-PS1='\w\[\033[0;32m\]$( git branch 2> /dev/null | cut -f2 -d\* -s | sed "s/^ / [/" | sed "s/$/]/" )\[\033[0m\] \$ '
+alias win="cd ~/winnie/winnie-web/web"
+alias py="python3"
+alias dev='open -a "Google Chrome" http://winnie.local/'
+alias staging='open -a "Google Chrome" https://staging.winnielabs.com'
+alias sandbox='open -a "Google Chrome" https://sandbox.winnielabs.com'
+alias production='open -a "Google Chrome" https://winnie.com'
+alias ww='open -a "Google Chrome" https://github.com/winnielabs/winnie-web'
+alias wwd='open -a "Google Chrome" https://github.com/danielafcarey/winnie-web'
+alias restart='./bin/dev/restart'
 
-# Add Visual Studio Code (code)
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+PS1='\w\[\033[0;32m\]$( git branch 2> /dev/null | cut -f2 -d\* -s | sed "s/^ / [/" | sed "s/$/]/" )\[\033[0m\] \$ '
 
 # Create React App boiler plate setup w/scss, eslint
 crap() {
