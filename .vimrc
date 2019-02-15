@@ -4,7 +4,7 @@ filetype plugin indent on
 :imap jj <Esc>
 set clipboard=unnamed
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|__pycache__'
 
 " ignore search case
 nnoremap / /\c
@@ -15,23 +15,25 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 " save and go back into normal mode
 imap jwj <Esc>:w<ENTER>
 
-" SET AUTOSAVE ON FOCUSLOST
+" set autosave on focus lost
 :au FocusLost * silent! wa
 
 " doesn't show 'visual' or 'normal' or 'insert'
 set noshowmode
 
+" show line numbers
 set nu
 
-" TOGGLE NUMBERS VIEW
+" toggle numbers view
 function! NumberToggle()
   :exec &nu==0? "se nu!" : "se rnu!"
 endfunction
 nnoremap <C-n> :call NumberToggle()<CR>
 
+" copy/paste from external apps
 set mouse=n
 
-" SOLARIZED COLORSCHEME
+" solarized colorscheme
 syntax enable
 set background=dark
 colorscheme solarized
@@ -44,7 +46,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" split resizing
+" split resizing with arrow keys
 nmap <Right> <C-w>>
 nmap <Left> <C-w><
 nmap <Up> <C-w>+
