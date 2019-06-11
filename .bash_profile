@@ -30,16 +30,15 @@ alias prod='open -a "Google Chrome" https://winnie.com'
 alias ww='open -a "Google Chrome" https://github.com/winnielabs/winnie-web'
 alias wwd='open -a "Google Chrome" https://github.com/danielafcarey/winnie-web'
 alias restart='./bin/dev/restart'
-alias grep='grep --exclude-dir={node_modules,__pycache__}'
+alias dp='docker pause winnie_web_1'
+alias dup='docker unpause winnie_web_1'
 
 PS1='\w\[\033[0;32m\]$( git branch 2> /dev/null | cut -f2 -d\* -s | sed "s/^ / [/" | sed "s/$/]/" )\[\033[0m\] \$ '
 
-# grep search excluding /node_modules and /__pycache__
+# grep search excluding /node_modules and /__pycache__ and minified js
 get () {
-  grep --exclude-dir={node_modules,__pycache__} -R "$1" *
+  grep -R "$1" * --exclude-dir={node_modules,__pycache__} --exclude="*.min.js"
 }
-
-PS1='\w\[\033[0;32m\]$( git branch 2> /dev/null | cut -f2 -d\* -s | sed "s/^ / [/" | sed "s/$/]/" )\[\033[0m\] \$ '
 
 # Create React App boiler plate setup w/scss, eslint
 crap() {
