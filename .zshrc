@@ -101,8 +101,3 @@ prompt_context(){}
 prompt_dir() {
   prompt_segment blue black "${PWD##*/}"
 }
-
-
-
-# added by travis gem
-[ -f /Users/daniela/.travis/travis.sh ] && source /Users/daniela/.travis/travis.sh
