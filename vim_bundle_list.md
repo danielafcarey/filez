@@ -1,0 +1,13 @@
+auto-pairs
+ctrlp.vim
+nerdtree
+vim-closetag
+vim-css-color
+vim-javascript
+vim-sensible
+commentary
+lightline.vim
+supertab
+vim-colors-solarized
+vim-gh-line
+vim-jsx
