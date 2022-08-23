@@ -52,6 +52,9 @@ nmap <Left> <C-w><
 nmap <Up> <C-w>+
 nmap <Down> <C-w>-
 
+" shortcut for django logging in insert mode
+iabbrev logg import logging<cr>logging.getLogger('django').info()<ESC>i
+
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
