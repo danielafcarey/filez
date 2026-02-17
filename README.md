@@ -28,6 +28,12 @@
     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
     ```
 13. Install vim bundles (eventually should write a script for this)
+
+    [claude-code](https://github.com/pasky/claude.vim)
+    ⚠️ Don't forget to add the api key to .vimrc
+    ```
+    git clone https://github.com/pasky/claude.vim.git ~/.vim/bundle/claude.vim
+    ```
     
     [auto-pairs](https://github.com/jiangmiao/auto-pairs): Insert or delete brackets, parens, quotes in pair
     ```
